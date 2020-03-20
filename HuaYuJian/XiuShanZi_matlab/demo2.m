@@ -3,7 +3,7 @@ clear; clc;
 data_temp = imread('./2.png');
 data_2 = data_temp(135:719,219:1059,1);
 data_2 = [data_2; zeros(256,841)];
-path = './Screenshot_2020-03-20-01-54-08.png';
+path = './2_test.png';
 data_temp = imread(path);
 test_2 = data_temp(135:719,219:1059,1);
 test_2 = [test_2; zeros(256,841)];
@@ -102,7 +102,7 @@ for i = 1:N
 end
 
 [c,t] = hungarian(total_cha');%每个位置放的第几块正确拼图
-
+v = c
 %% 按顺序恢复
 
 move = zeros(1,N);
