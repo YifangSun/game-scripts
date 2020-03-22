@@ -19,7 +19,9 @@ def change_all(move):
         if(move[i]!=-1):
             change(i,move[i])
 
-move = [-1, 6, 9, -1, 6, -1, 8, 9, 9, -1]
+move = [-1, -1, 5, 6, 5, 7, 8, -1, -1, -1]
+
+
 
 
 change_all(move)
