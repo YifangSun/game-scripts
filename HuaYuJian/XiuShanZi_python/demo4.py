@@ -27,7 +27,7 @@ arr = arr[36:756,1:1281,0:3]
 # imgs = Image.fromarray(arr)
 # imgs.save("2_test.png")
 
-data_temp = Image.open('3.png')
+data_temp = Image.open('5.png')
 data_2 = np.array(data_temp)
 data_2 = data_2[134:719,218:1059,1]
 zeros = np.zeros((256,841))
@@ -58,10 +58,10 @@ test_2 = test_2 * masking_round
 # plt.imshow(show)
 # plt.show()
 ## rotate argument
-N = 10
+N = 16
 left_angle = 170
 angle_space = 160 / N
-show_range = [left_angle-2*angle_space+1, left_angle-angle_space-1]
+show_range = [left_angle-8*angle_space+1, left_angle-7*angle_space-1]
 tan_bigger = np.abs(np.tan(show_range[0]/180*np.pi))
 tan_lower = np.abs(np.tan(show_range[1]/180*np.pi))
 
@@ -82,33 +82,33 @@ for i in range(420):
 gray2white = 30
 
 data_im = Image.fromarray(data_2)
-data_slice = np.zeros((420,420,N))
+data_slice = np.zeros((279,64,N))
 for n in range(N):
-    data_rotate = data_im.rotate(angle_space*(n-1))
+    data_rotate = data_im.rotate(angle_space*(n-7))
     data_array = np.array(data_rotate)
     if(n%2==1):
         data_array = data_array + gray2white
     data_array = data_array * masking_sector
-    data_slice[:,:,n] = data_array[0:420,0:420]
+    data_slice[:,:,n] = data_array[0:279,355:419]
 
 test_im = Image.fromarray(test_2)
-test_slice = np.zeros((420,420,N))
+test_slice = np.zeros((279,64,N))
 for n in range(N): 
-    test_rotate = test_im.rotate(angle_space*(n-1))
+    test_rotate = test_im.rotate(angle_space*(n-7))
     test_array = np.array(test_rotate)
     test_array = test_array * masking_sector
     if(n%2==1):
         test_array = test_array + gray2white
     test_array = test_array * masking_sector
-    test_slice[:,:,n] = test_array[0:420,0:420]
+    test_slice[:,:,n] = test_array[0:279,355:419]
 
 # plt.figure()
-# show1 = np.concatenate((test_slice[:,:,3],data_slice[:,:,4]),axis=0)
+# show1 = np.concatenate((test_slice[:,:,14],data_slice[:,:,11]),axis=0)
 # show = Image.fromarray(show1)
 # plt.imshow(show)
 # plt.show()
-
 # im1 = Image.fromarray(test_slice[:,:,14])
+
 # plt.hist(test_slice[:,:,14], 256, [0, 256])
 # plt.show()
 
@@ -130,7 +130,7 @@ print(r,c)
 # plt.show()
 
 ############ calculate move ############
-move = [0,1,2,3,4,5,6,7,8,9]
+move = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 
 for i in range(N):
     idx = np.argsort(c)
@@ -145,25 +145,20 @@ print(move)
 
 
 ############ start click ############
-# m = PyMouse()
-
-# pos_10 = [[220, 371],[264, 304],[317, 241],[382, 190],[467, 165],
-# [545, 160],[629, 198],[694, 252],[750, 314],[790, 377]]
-
-# m.click(pos_10[0][0], pos_10[0][1])
-# time.sleep(1)
+# mouse = PyMouse()
+# pos_16 = [[210, 392],[243,340],[262,294],[297,250],[336,226],
+# [383,194],[434,170],[485,167],[531,167],[579,199],[630, 199],
+# [668, 235],[717, 254],[750, 298],[780, 345],[794, 390]]
 
 # def change(num1, num2):
-#     m.press(pos_10[num1][0],pos_10[num1][1])
+#     mouse.press(pos_16[num1][0],pos_16[num1][1])
 #     time.sleep(0.01)
-#     m.press(pos_10[num2][0],pos_10[num2][1])
+#     mouse.press(pos_16[num2][0],pos_16[num2][1])
 #     time.sleep(0.77)
 
-# def change_all(move):
-#     m.click(100,100)
-#     time.sleep(0.009)
-#     for i in range(10):
-#         if(move[i]!=-1):
-#             change(i,move[i])
+# mouse.click(100,100)
+# time.sleep(0.009)
+# for i in range(16):
+#     if(move[i]!=-1):
+#         change(i,move[i])
 
-# change_all(move)
