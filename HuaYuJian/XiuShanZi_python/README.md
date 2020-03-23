@@ -12,7 +12,6 @@
 	time - 测试运行时间
 
 ## 效果
-![坠儿](https://github.com/YifangSun/my-script-tools/blob/master/HuaYuJian/XiuShanZi_python/example.png)
 <img src="https://github.com/YifangSun/my-script-tools/blob/master/HuaYuJian/XiuShanZi_python/example.png">
 效果基本上就是这样，最左边的头发没办法区分出来，右边比较明显的图片还是很容易区分的。程序弄完还要手动再补充操作几下。
 ## 用法
