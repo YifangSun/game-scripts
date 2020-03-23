@@ -14,6 +14,7 @@
 ## 效果
 <img src="https://github.com/YifangSun/my-script-tools/blob/master/HuaYuJian/XiuShanZi_python/example.png">
 效果基本上就是这样，最左边的头发没办法区分出来，右边比较明显的图片还是很容易区分的。程序弄完还要手动再补充操作几下。
+
 ## 用法
 2-3关都是10片扇形，所以都用`demo2.p`。3-4关都是16片扇形，所以都用`demo4.p`。
 下面以第二关为例
