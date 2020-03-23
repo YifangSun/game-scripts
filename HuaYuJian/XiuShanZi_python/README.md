@@ -33,6 +33,7 @@ img.save("5.png") #"5.png" ，第二关修改为2.png，第三关3.png
 
 ### 第二，运行demo
 因为我的模拟器窗口名叫“1”，所以的demo2的line 16:
+
 demo2.py - line 16:
 ```
 hwnd = win32gui.FindWindow(None, '1') #'1'修改为你的游戏窗口名
@@ -41,6 +42,7 @@ hwnd = win32gui.FindWindow(None, '1') #'1'修改为你的游戏窗口名
 4-5关对应的是`demo3.py`，记得修改对应的。
 ### 第三，运行点击程序
 第二步执行完会最后输出一个向量，把它粘贴到`dianji_test_2.py`并赋值给move
+
 dianji_test_2.py - line 22:
 ```
 move = [-1, -1, 5, 6, 5, 7, 8, -1, -1, -1]
