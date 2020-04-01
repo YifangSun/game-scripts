@@ -12,11 +12,13 @@
 	time - 测试运行时间
 
 ## 效果
-<img src="https://raw.githubusercontent.com//YifangSun/my-script-tool/master/HuaYuJian/XiuShanZi_python/example.png">
+<img src="https://github.com/YifangSun/my-script-tools/blob/master/HuaYuJian/XiuShanZi_python/example.png">
 效果基本上就是这样，最左边的头发没办法区分出来，右边比较明显的图片还是很容易区分的。程序弄完还要手动再补充操作几下。
+
 ## 用法
 2-3关都是10片扇形，所以都用`demo2.p`。3-4关都是16片扇形，所以都用`demo4.p`。
 下面以第二关为例
+
 ### 第一，把第这关的原图保存下来
 
 pyqt_jietu.py - line 9:
@@ -31,6 +33,7 @@ img.save("5.png") #"5.png" ，第二关修改为2.png，第三关3.png
 
 ### 第二，运行demo
 因为我的模拟器窗口名叫“1”，所以的demo2的line 16:
+
 demo2.py - line 16:
 ```
 hwnd = win32gui.FindWindow(None, '1') #'1'修改为你的游戏窗口名
@@ -39,6 +42,7 @@ hwnd = win32gui.FindWindow(None, '1') #'1'修改为你的游戏窗口名
 4-5关对应的是`demo3.py`，记得修改对应的。
 ### 第三，运行点击程序
 第二步执行完会最后输出一个向量，把它粘贴到`dianji_test_2.py`并赋值给move
+
 dianji_test_2.py - line 22:
 ```
 move = [-1, -1, 5, 6, 5, 7, 8, -1, -1, -1]
