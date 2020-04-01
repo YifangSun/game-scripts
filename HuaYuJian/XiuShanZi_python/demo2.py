@@ -124,7 +124,7 @@ for n in range(N):
     
 r, c = linear_sum_assignment(diff)
 
-print(r,c)
+# print(r,c)
 # test_show = Image.fromarray(test_slice[:,:,9])
 # plt.imshow(test_show)
 # plt.show()
